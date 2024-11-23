@@ -8,7 +8,10 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-
+html,
+body {
+    scroll-behavior: smooth;
+}
 html {
     font-size: 62.5%;
     font-family: Poppins;
@@ -32,13 +35,24 @@ html {
     justify-content: center;
     align-items: center;
 }
-
-/* ========header=========== */
-.header {
+/* ==========.fixed-header========== */
+.fixed-header {
+    background: #e6f0ff;
+    padding-top: 26px;
+    position: sticky;
+    top: -26px;
+    z-index: 1;
+}
+/* ========hero=========== */
+.hero-wrap {
     position: relative;
     height: 100vh;
     flex-shrink: 0;
     background: #e6f0ff;
+    display: flex; /*xu li khoang trang khi dua the nav ra ngoai */
+    flex-direction: column; /*de cac the con van hoat dong theo chieu doc  */
+    height: calc(100vh - 90px);
+    justify-content: center; /*can giu chieu doc*/
 }
 .content {
     width: 1110px;
@@ -106,7 +120,8 @@ html {
     width: 51%;
 }
 .hero .sub-title {
-    margin-top: 130px;
+    /* margin-top: 130px; */
+    /* xu ly khoang trang khi neo phan header-fixed lai thay vi dung margin thi doi thanh padding */
     color: #687690;
     font-size: 1.8rem;
     font-weight: 500;
